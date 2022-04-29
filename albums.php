@@ -332,7 +332,8 @@ require_once('Includes/connection.php');
     </style>
   </footer>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+            const numberOfTracks = <?php echo $countsongs ?>;
+    /* document.addEventListener("DOMContentLoaded", function() {
       var volumRange = document.getElementById('volumRange');
       var songcurrenttime = document.getElementById('songcurrenttime');
       var audioduration = document.getElementById('audioduration');
@@ -341,13 +342,7 @@ require_once('Includes/connection.php');
 
 
       var audio = document.getElementById('audio');
-      /* idsarray.forEach(songid => {
-        alert(songid);
-        document.getElementById(songid).addEventListener('click', function(e){
-          e.preventDefault();
-          alert("wayway");
-        });
-      }); */
+      
 
       volumRange.addEventListener('change', function() {
         audio.volume = volumRange.value;
@@ -496,8 +491,10 @@ require_once('Includes/connection.php');
       });
 
 
-    });
+    }); */
+    
   </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
