@@ -8,13 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     var audio = document.getElementById('audio');
-    /* idsarray.forEach(songid => {
-      alert(songid);
-      document.getElementById(songid).addEventListener('click', function(e){
-        e.preventDefault();
-        alert("wayway");
-      });
-    }); */
+    
 
     volumRange.addEventListener('change', function () {
         audio.volume = volumRange.value;
@@ -116,46 +110,37 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     prevbtn.addEventListener('click', function (e) {
         if (playedtrack >= 1) {
-            alert(playedtrack);
             playedtrack--;
             audio.pause();
             audio.src = songsarray[playedtrack];
             audio.load();
             audio.play();
             playbtn.className = 'btn bi bi-pause-circle-fill ml-2 mr-2';
-            alert(playedtrack);
         } else {
-            alert(playedtrack);
             audio.pause();
             playedtrack = numberOfTracks - 1;
             audio.src = songsarray[playedtrack];
             audio.load();
             audio.play();
             playbtn.className = 'btn bi bi-pause-circle-fill ml-2 mr-2';
-            alert(playedtrack);
-
         }
     });
     nextbtn.addEventListener('click', function (e) {
 
         if (playedtrack < numberOfTracks) {
-            alert(playedtrack);
             audio.pause();
             audio.src = songsarray[playedtrack];
             playedtrack++;
             audio.load();
             audio.play();
             playbtn.className = 'btn bi bi-pause-circle-fill ml-2 mr-2';
-            alert(playedtrack);
         } else if (playedtrack == numberOfTracks) {
-            alert(playedtrack);
             audio.pause();
             audio.src = songsarray[0];
             audio.load();
             audio.play();
             playbtn.className = 'btn bi bi-pause-circle-fill ml-2 mr-2';
             playedtrack = 1;
-            alert(playedtrack);
         } else {
             playedtrack = numberOfTracks - 1;
         }
